@@ -160,6 +160,7 @@ section#course > div.container {
                         /* ------ display Section ------  */
 
 section#display {
+    margin-top: 3em;
     width: 100%;
     height: 34em;
 }
@@ -182,20 +183,22 @@ div#displayHead {
 }
 div#displayIcons {
     width: 100%;
-    height: 5em;
+    height: 8em;
     /* background-color: aqua; */
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+    margin: 1em 0em;
 }
 .displayIcons {
     /* background-color: yellowgreen; */
     width: 10%;
-    height: 100%;
+    height: 4em;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    filter: grayscale(5);
 }
 #htmlIcon {
     background-image: url(./assets/images/html.jfif);
@@ -205,13 +208,18 @@ div#displayIcons {
 }
 #jsIcon {
     background-image: url(./assets/images/js.png);
+    height: 100%;
+}
+.displayIcons:hover {
+    filter: grayscale(0);
+    cursor: pointer;
 }
                 /* 2 */
 div#displayText {
     width: 100%;
     height: 16em;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -246,7 +254,8 @@ div#displayDetails {
 }
 div#displayDescription {
     width: 65%;
-    height: 100%;    
+    height: 100%;   
+    overflow: hidden; 
     /* background-color: aqua; */
 }
 div#viewBtn {
@@ -424,6 +433,35 @@ div.buyBtn {
 
 
 
+                        /* -------- Share this ---------  */
+section#shareLinks {
+    width: 100%;
+    height: 8em;
+    /* background-color: blue; */
+}
+section#shareLinks > div.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    div {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 1em;
+        div {
+            /* border: 1px solid black; */
+            padding: 0.5em 1em;
+            /* width: 7em; */
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+        }
+    }
+}
+
 
 
                         /* ======Media Queries=========  */
@@ -458,12 +496,36 @@ div.buyBtn {
         width: 100%;
         padding: 0;
     }
-   
+    div#displayText  {
+        flex-flow: column nowrap;
+        height: 30%;
+    }
+    section#display {
+        height: 55em;
+        .container {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+    div#displayText {
+        height: 70%;
+        .detailsCard {
+            width: 80%;
+            justify-content: center;
+            align-items: flex-start; 
+            margin: 0em auto 0em 0em;
+        }
+        
+    }
+    #jsIcon {
+        background-size: cover;
+        height: 4em;
+    }
     
 }  
 @media (min-width : 900px)   {
     div#hamBurger {
-        display: none   ;
+        display: none;
     }
 }
 
@@ -475,12 +537,70 @@ div.buyBtn {
         flex-flow: column wrap;
         justify-content: space-around;
     }
-    
-
+    div#pricingSection {
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-around;
+        height: 90%;
+    }
+    section#pricing {
+        height: 75em;
+    }
+    div.pricingDetails {
+        height: 90%;
+        justify-content: center;
+        width: 40%;
+    }
+    div.details {
+        justify-content: center;
+        ul {
+            margin: 0.2em 0em 0.5em 0.5em;
+            font-size: small;
+        }
+    }
+    div.screen {
+        height: 35%;
+        justify-content: center;
+        align-items: center;
+        margin:  0.4em auto;
+    }
+    div#displayIcons {
+        height: 5em;
+        justify-content: space-around;
+    }
+    .displayIcons {
+        /* background-color: yellowgreen; */
+        width: 14%;
+        height: 100%;
+        background-size: contain;
+    }
 }
 @media (max-width: 500px) {
-    
-   
+    div.pricingDetails {
+        height: 90%;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+    }
+    div#displayDetails {
+        height: 40%;
+    }
+    div#pricingHead {
+        h2 {
+            font-size: 1.3em;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            font-size: small;
+        }
+    }
+    div.buyBtn {
+        width: 50%;
+        align-self: center;
+        justify-self: center;
+    }
 }
 
 @media (max-width: 400px) {
@@ -496,5 +616,43 @@ div.buyBtn {
     }
     div#hamBurger {
         display: flex;
+    }
+    section#display {
+        height: 65em;
+        .container {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+    div#displayText {
+        height: 80%;
+        div#displayDescription {
+            height: 100%;
+            margin: 0%;
+            width: 100%;
+        }
+        
+    }
+    div.pricingDetails {
+        width: 90%;
+    }
+    div.buyBtn {
+        a {
+            font-size: x-small;
+        }
+    }
+}
+@media (max-width: 320px) {
+    div#pricingHead {
+        h2 {
+            font-size: 0.8em;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+        p {
+            font-size: x-small;
+            width: 90%;
+        }
     }
 }
