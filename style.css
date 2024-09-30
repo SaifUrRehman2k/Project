@@ -1,6 +1,6 @@
 :root {
     --primaryColor: rgba(218, 80, 1, 0.815);
-    --secondryColor: rgba(39, 38, 36, 0.829);
+    --secondryColor: rgb(46, 45, 45);
     --tertiaryColor: rgba(197, 191, 7, 0.842);
     --hoverBgColor1: rgba(255, 255, 255, 0.363);
     --quaternaryColor : rgba(247, 242, 233, 0.801);
@@ -95,14 +95,14 @@ nav {
     }
  
 }
-div#logo, div#navMenu  {
+div.logo, div#navMenu  {
     height: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
 } 
 
-div#logo {
+div.logo {
     width: 20%;  
     font-family: museo;
     color: var(--secondryColor);
@@ -329,7 +329,7 @@ div#pricingSection {
 div.pricingDetails {
     width: 30%;
     height: 80%;
-    background-color: rgba(235, 232, 232, 0.822);
+    background-color: var(--quaternaryColor);
     border-radius: 1em;
     display: flex;
     flex-flow: column nowrap;
@@ -408,7 +408,7 @@ div.details {
     }
 }
 div.buyBtn {
-    width: 80%;
+    /* width: 50%; */
     margin: 0px auto;
     display: flex;
     align-items: center;
@@ -434,31 +434,272 @@ div.buyBtn {
 
 
                         /* -------- Share this ---------  */
+.subH2 {
+    border-bottom: 1px solid rgb(216, 215, 215);
+    width: 100%;
+    padding-bottom: 0.5em;
+} 
 section#shareLinks {
     width: 100%;
     height: 8em;
     /* background-color: blue; */
 }
 section#shareLinks > div.container {
+    width: 92%;
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
+    justify-content: space-around; 
+}
+#shareLinkColl {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5em;
+
+}
+.shareLink {
+    padding: 0.5em 1em;
+    a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        gap: 0.5em;
+    }
+}
+.shareLink:hover {
+    filter: opacity(0.8);
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+
+
+                        /* ------------ Other Courses --------------  */
+
+section#otherCourses {
+    width: 100%;
+    height:  50em;
+    margin-top: 4em;
+    .container {
+        width: 92%;
+        /* margin: auto; */
+        /* background-color: yellow; */
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content:flex-start;
+        gap: 3em;
+    }
+}
+div#courseColl {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+div.Course {
+    width: 30%;
+    height: 20em;
+    transition: all 100ms linear;
+    /* border: 1px solid black; */
+    border: 1px solid rgb(211, 211, 211);
+
+}
+div.courseImg {
+    width: 100%;
+    height: 60%;
+    background-image: url(./assets/images/react-logo.png);
+    background-size: cover;
+    background-position: center;
+}
+div.courseDetails {
+    height: 40%;
+    width: 100%;
+    padding: 1em;
+    background-color: var(--quaternaryColor);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
     justify-content: space-around;
-    div {
+    box-sizing: border-box;
+    .rating {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+    h2 > a {
+        background-color: var(--primaryColor);
+        padding: 0.2em 1em;
+        font-size: medium;
+        color: white;
+        text-decoration: none;
+        border-radius: 0.2em;
+    }
+    h2 > a:hover {
+        background-color: var(--secondryColor);
+    }
+}
+div.c2 {
+    background-image: url(./assets/images/python.jpeg);
+}
+div.c3 {
+    background-image: url(./assets/images/AdobeExpressLogo.jpg);
+}
+div.c4 {
+    background-image: url(./assets/images/fluter.jfif);
+}
+div.c5 {
+    background-image: url(./assets/images/WP.jfif);
+}
+div.c6 {
+    background-image: url(./assets/images/unity.jfif);
+}
+div.Course:hover {
+    box-shadow: 5px 15px 8px var(--secondryColor), 5px 8px 10px white inset;
+    cursor: pointer;
+}
+
+
+                    /* -------------- Line -------------  */
+
+section#line {
+    margin-top: 3em;
+    width: 100%;
+    height: 5em;
+    border-top: 1px solid rgb(214, 213, 213);
+    border-bottom: 1px solid rgb(214, 213, 213);
+    .container {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+        p {
+            font-size: x-large;
+        }
+    }
+    #moreBtn {
+        background-color: var(--primaryColor);
+        font-size: large;
+        padding: 0.5em 1em;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+    #moreBtn:hover {
+        background-color: var(--tertiaryColor);
+        cursor: pointer;
+        a {
+            color: black;
+        }
+    }
+}
+
+
+                        /* ------- footer links ---------- */
+section#footerLinks {
+    width: 100%;
+    height: 30em;
+    background-color: var(--secondryColor);
+    .container {
         display: flex;
         flex-flow: row nowrap;
-        align-items: flex-start;
-        justify-content: center;
-        gap: 1em;
-        div {
-            /* border: 1px solid black; */
-            padding: 0.5em 1em;
-            /* width: 7em; */
+        height: 90%;
+        div.logo {
+            width: 60%;
+            height: 100%;
             display: flex;
-            align-items: center;
-            justify-content: space-around;
+            flex-flow: column nowrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            gap: 1em;
+            margin: 1em;
+            p {
+                color: white;
+                width: 65%;
+            }
+            h1 {
+                color: white;
+                font-size: 5em;
+                width: 100%;
+            }
+            h1::first-letter  {
+                color: rgb(1, 190, 32);
+                font-size: 1em;
+                font-weight: 400;
+            }
+        }
+    }
+
+}
+div#linksSec {
+    width: 30%;
+    height: 100%;
+    margin-top: 2em;
+    /* background-color: blue; */
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0.5em 2em;
+    align-items: flex-start;
+    justify-content: flex-start;
+    ul {
+        list-style: none;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: space-around;
+        dd {
+            font-size: x-large;
+            height: 100%;
+            padding: 0em 0.5em;
             color: white;
         }
+        li {
+            border-top: 1px solid rgb(90, 89, 89);
+
+        }
+        li,a {
+            color: white;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0.2em;
+        }
+        li:hover {
+            background-color: rgba(255, 255, 255, 0.363);
+        }
+    }
+}
+
+
+                        /* ----- footer ------  */
+footer {
+    width: 100%;
+    height: 4em;
+    color: white;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a {
+        color: rgb(216, 214, 214);
+    }
+    svg {
+        width: 40px;
+        height: 40px;
+        transform: rotate(270deg);
     }
 }
 
@@ -520,12 +761,42 @@ section#shareLinks > div.container {
     #jsIcon {
         background-size: cover;
         height: 4em;
+    } 
+    section#otherCourses {
+        height: 65%;
     }
-    
+    div.Course {
+        width: 45%;
+    }
+    div#courseColl {
+        height: 100%;
+        gap: 1em;
+    }
+    footer {
+        p {
+            font-size: small;
+        }
+    }
 }  
+
 @media (min-width : 900px)   {
     div#hamBurger {
         display: none;
+    }
+}
+@media (max-width : 750px) {
+    div.pricingDetails {
+        width: 50%;
+        height: 30%;
+    }
+    section#pricing {
+        height: 120em;
+    }
+    div#pricingSection {
+        height: 85%;
+    }
+    div#pricingHead {
+        height: 10%;
     }
 }
 
@@ -541,11 +812,17 @@ section#shareLinks > div.container {
         flex-flow: column nowrap;
         align-items: center;
         justify-content: space-around;
-        height: 90%;
+        height: 80%;
     }
     section#pricing {
-        height: 75em;
+        height: 90em;
+        .container {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+        }
     }
+    /* #pricingHead {} */
     div.pricingDetails {
         height: 90%;
         justify-content: center;
@@ -574,7 +851,39 @@ section#shareLinks > div.container {
         height: 100%;
         background-size: contain;
     }
+    div.Course {
+        width: 85%;
+        height: 15%;
+    }
+    div#courseColl {
+        height: 100%;
+        gap: 1em;
+        justify-content: center;
+    }
+    div.courseImg {
+        height: 60%;
+    }
+    section#otherCourses {
+        height: 150em;
+        .container {
+            height: 100%;
+        }
+    }
+    section#line .container {
+        justify-content: space-around;
+    }
+    footer {
+        p  {
+            width: 70%;
+        }
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    
 }
+
 @media (max-width: 500px) {
     div.pricingDetails {
         height: 90%;
@@ -601,6 +910,60 @@ section#shareLinks > div.container {
         align-self: center;
         justify-self: center;
     }
+    
+    section#shareLinks > div.container  {
+        width: 90%;
+        height: 100%;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap: 1em;
+        h2 {
+            width: 100%;
+            height: 15%;
+        }
+    }
+    section#shareLinks {
+        height: 10em;
+        /* background-color: blue; */
+    }
+    #shareLinkColl {
+        /* background-color: yellow; */
+        width: 70%;
+        height: 60%;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    div.Course {
+        width: 100%;
+    }
+    section#line .container {
+        /* margin: 1em 0em; */
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+    section#footerLinks div.container div#linkSec {
+        width: 60%;
+    }
+    section#footerLinks div.container div.logo {
+        width: 40%;
+    }
+    section#footerLinks div.container div.logo h1 {
+        font-size: 3em;
+    }
+    section#footerLinks div.container div.logo h1::first-letter {
+        font-size: 1em;
+    }
+    section#footerLinks div.container div.logo p {
+        font-size: small;
+    }
+    #jsIcon {
+        /* background-size: cover; */
+        height: 3em;
+    } 
+    div#headIcons {
+        width: 7em;
+    }
 }
 
 @media (max-width: 400px) {
@@ -625,7 +988,6 @@ section#shareLinks > div.container {
         }
     }
     div#displayText {
-        height: 80%;
         div#displayDescription {
             height: 100%;
             margin: 0%;
@@ -641,6 +1003,62 @@ section#shareLinks > div.container {
             font-size: x-small;
         }
     }
+    #shareLinkColl {
+        width: 100%;
+    }
+    div.c1 {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: rgb(82 212 246);
+    }
+    section#line .container {
+        justify-content: space-around;
+        padding-top: 0.5em;
+        padding: 1em 0em;
+        border-bottom: none;
+        p {
+            font-size: 1em;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    section#footerLinks {
+        margin-top: 4em;
+        height: 40em;
+        .container {
+            width: 100%;
+            height: 100%;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+    section#footerLinks div.container div#linksSec {
+        width: 100%;
+        height: 60%;
+        box-sizing: border-box;
+        padding-left: 0.5em;
+    }
+    section#footerLinks div.container div.logo {
+        width: 90%;
+        height: 30%;
+        box-sizing: border-box;
+        p {
+            width: 100%;
+        }
+    }
+    footer {
+        p {
+            font-size: x-small;
+            width: 80%;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
+    
 }
 @media (max-width: 320px) {
     div#pricingHead {
@@ -654,5 +1072,41 @@ section#shareLinks > div.container {
             font-size: x-small;
             width: 90%;
         }
+    }
+    div#viewBtn {
+        width: 10em;
+        height: 3em;
+        a {
+            display: flex;
+            padding: 1em;
+            font-size: small;
+        }
+    }
+    #jsIcon {
+        background-size: cover;
+        height: 2em;
+    } 
+}
+@media (max-width : 280px) {
+    section#shareLinks {
+        height: 20em;
+        /* background-color: blue; */
+        .container {
+            justify-content: center;
+            gap: 0.1em;
+        }
+    }
+    #shareLinkColl {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
+@media (max-width : 230px) {
+    h2{
+        font-size: large;
+    }
+    p,li,a,span {
+        font-size: small;
     }
 }
